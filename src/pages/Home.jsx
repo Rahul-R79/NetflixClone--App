@@ -1,30 +1,23 @@
-import { useEffect } from "react"
-import { searchMovies } from "../services/omdb"
+import { useContext, useEffect } from "react";
+import { MovieContext } from "../context/MovieContext";
+import { searchMovies } from "../services/omdb";
 
-function Home() {
-    useEffect(() => {
-        const testApi = async () => {
-            // Test with multiple movie names
-            const testQueries = [
-                "inception", 
-                "the godfather", 
-                "pulp fiction", 
-                "titanic", 
-                "interstellar"
-            ];
-            
-            for (const query of testQueries) {
-                const result = await searchMovies(query);
-                console.log(`Results for "${query}":`, result);
-            }
-        }
+function Home () {
+  const { movies, setMovies } = useContext(MovieContext);
 
-        testApi();
-    }, []);
+  useEffect(() => {
+    const loadMovies = async () => {
+      const results = await searchMovies("avengers"); // Test search
+      setMovies(results);
+    };
+    loadMovies();
+  }, []);
 
-    return (
-        <h1 className="text-primary">Testing OMDB API</h1>
-    )
-}
-
-export default Home
+  return (
+    <div>
+      <h1>Netflix Clone</h1>
+      <pre>{JSON.stringify(movies, null, 2)}</pre> {/* Debug output */}
+    </div>
+  );
+};
+export default Home;
