@@ -1,14 +1,32 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from './pages/Home'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import { MovieProvider } from './context/MovieContext';
+import Home from './pages/Home/Home';
+import MovieDetails from './pages/MovieDetails/MovieDetails';
+import Login from './components/auth/LoginPage';
+import Signup from './components/auth/SignupPage';
+import AppNavbar from './components/common/AppNavbar';
+import ProtectedRoute from './components/ProtectedRoute';
 
-function App(){
-	return(
-		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<Home/>}/>
-			</Routes>
-		</BrowserRouter>
-	)
+function App() {
+  return (
+    <Router>
+		<AuthProvider>
+			<MovieProvider>
+				<AppNavbar />
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/login" element={<Login />} />
+					<Route path="/signup" element={<Signup />} />
+					{/* Protected Routes */}
+					<Route element={<ProtectedRoute />}>
+					<Route path="/movie/:imdbID" element={<MovieDetails />} />
+					</Route>
+				</Routes>
+			</MovieProvider>
+		</AuthProvider>
+    </Router>
+  );
 }
 
 export default App;

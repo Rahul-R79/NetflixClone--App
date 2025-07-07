@@ -1,0 +1,266 @@
+.home-page {
+  background-color: #000000;
+  color: white;
+  min-height: 100vh;
+}
+
+.hero-banner {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+  url('../../assets/images/netflix-bg.jpg') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-slide {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-content {
+  max-width: 650px;
+  color: #eeeeee;
+  z-index: 2;
+  margin-top: 100px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 1000;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.cta-form {
+  margin-top: 20px;
+}
+
+.cta-text {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.cta-input-group {
+  display: flex;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.cta-input {
+  flex: 1;
+  height: 60px;
+  padding: 10px;
+  font-size: 1rem;
+  color: #fff;
+  border: 1px solid #939393;
+  border-radius: 2px;
+  background-color: transparent;
+}
+
+.cta-button {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  font-size: 1.625rem;
+  padding: 0 1em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 2px;
+}
+
+.cta-button:hover {
+  background-color: #f40612;
+}
+
+.chevron-right {
+  margin-left: 10px;
+}
+
+.movie-card {
+  transition: transform 0.3s;
+  border: none;
+  overflow: hidden;
+  background: #222;
+  border-radius: 4px;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  z-index: 1;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.movie-poster {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.movie-row {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 20px 0;
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+.movie-row::-webkit-scrollbar {
+  display: none; 
+}
+
+.movie-item {
+  flex: 0 0 auto;
+  margin-right: 10px;
+  width: 200px;
+}
+
+.content-sections {
+  padding: 3rem 0;
+  position: relative;
+}
+
+.movie-section {
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  padding-left: 15px;
+}
+
+.carousel-control-next, 
+.carousel-control-prev {
+  width: 5%;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.movie-section:hover .carousel-control-next,
+.movie-section:hover .carousel-control-prev {
+  opacity: 1;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.no-movies-alert {
+  background-color: #222;
+  color: white;
+  border: none;
+}
+
+.error-alert {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .hero-banner {
+    height: auto;
+    padding: 60px 20px;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+  
+  .cta-form {
+    margin-top: 15px;
+  }
+  
+  .cta-text {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+  
+  .cta-input-group {
+    flex-direction: column;
+    max-width: 100%;
+  }
+  
+  .cta-input {
+    width: 100%;
+    height: 48px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .cta-button {
+    width: 100%;
+    height: 48px;
+    font-size: 1.2rem;
+    justify-content: center;
+  }
+  
+  .movie-item {
+    width: 150px;
+  }
+  
+  .movie-poster {
+    height: 225px;
+  }
+  
+  .section-title {
+    font-size: 1.3rem;
+    padding-left: 10px;
+  }
+  
+  .content-sections {
+    padding: 2rem 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .movie-item {
+    width: 120px;
+  }
+  
+  .movie-poster {
+    height: 180px;
+  }
+  
+  .section-title {
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,15 @@
+.netflix-footer a:hover {
+	text-decoration: underline;
+	color: #ffffff;
+}
+.netflix-footer a {
+	color: #ffffff !important;
+	text-decoration: none;
+}
+
+.netflix-footer a:hover,
+.netflix-footer a:focus,
+.netflix-footer a:visited {
+	color: #ffffff !important;
+	text-decoration: underline;
+}

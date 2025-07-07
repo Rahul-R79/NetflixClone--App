@@ -1,0 +1,36 @@
+.movie-card {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border: none;
+  overflow: hidden;
+}
+
+.movie-card:hover {
+  transform: scale(1.03);
+}
+
+.movie-poster {
+  height: 400px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .movie-poster {
+    height: 300px;
+  }
+}
