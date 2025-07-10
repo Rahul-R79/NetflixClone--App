@@ -5,6 +5,7 @@ import { MovieContext } from '../../context/MovieContext';
 import { searchMovies } from '../../services/omdb';
 import MovieCard from '../MovieCard/MovieCard';
 import Footer from '../../components/common/Footer/Footer';
+import AppNavbar from '../../components/common/AppNavbar'
 import '../Home/Home.css';
 
 const Home = () => {
@@ -29,7 +30,7 @@ const Home = () => {
                     searchMovies('drama')
                 ]);
 
-                setFeaturedMovies(featured.Search?.slice(0, 6) || []);
+                setFeaturedMovies(featured.Search?.slice(0, 8) || []);
                 setTrendingNow(trending.Search || []);
                 setTopRated(rated.Search || []);
             } catch (error) {
@@ -47,6 +48,8 @@ const Home = () => {
 
     return (
         <div className="home-page">
+            {/* Navbar */}
+            <AppNavbar/>
             {/* Hero Banner Section */}
             <div className="hero-banner">
                 <div className="hero-overlay"></div>

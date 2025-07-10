@@ -3,10 +3,8 @@ import { Card } from 'react-bootstrap';
 import { getPosterUrl } from '../../services/omdb';
 import './MovieCard.css';
 
-const MovieCard = ({ 
-    movie, 
-    cardBackground = '#000' 
-}) => {
+const MovieCard = ({movie}) => {
+    
     const navigate = useNavigate();
 
     const handleCardClick = () => {
@@ -17,7 +15,7 @@ const MovieCard = ({
         <Card 
             className="movie-card h-100" 
             onClick={handleCardClick}
-            style={{ backgroundColor: cardBackground, color: 'white' }}
+            style={{ backgroundColor: '#000', color: '#fff'}}
         >
             <Card.Img 
                 variant="top" 

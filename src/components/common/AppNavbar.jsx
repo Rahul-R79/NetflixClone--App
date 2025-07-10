@@ -5,12 +5,9 @@ import netflixLogo from '../../assets/images/netflix.svg';
 import { Navbar, Nav, Button, Container, Spinner } from "react-bootstrap";
 
 const AppNavbar = () => {
-    const location = useLocation();
     const { isAuthenticated, logout, isLoading: authLoading } = useContext(AuthContext);
 
-    //Show navbar Only on homepage
-    const showNavbar = location.pathname === '/';
-
+    // for handling logout
     const handleLogout = () => {
         logout();
     };
@@ -23,9 +20,6 @@ const AppNavbar = () => {
             </div>
         );
     }
-
-    //Hide navbar on all non-home routes
-    if (!showNavbar) return null;
 
     return (
         <Navbar

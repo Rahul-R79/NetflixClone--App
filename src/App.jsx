@@ -5,7 +5,6 @@ import Home from './pages/Home/Home';
 import MovieDetails from './pages/MovieDetails/MovieDetails';
 import Login from './components/auth/LoginPage';
 import Signup from './components/auth/SignupPage';
-import AppNavbar from './components/common/AppNavbar';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
@@ -13,7 +12,6 @@ function App() {
     <Router>
 		<AuthProvider>
 			<MovieProvider>
-				<AppNavbar />
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/login" element={<Login />} />

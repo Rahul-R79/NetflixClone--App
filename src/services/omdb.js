@@ -45,9 +45,6 @@ export const getMovieDetails = async (imdbID) => {
     }
 };
 
-// YouTube API key
-const YOUTUBE_API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
-
 // Fetch YouTube trailer for a given movie
 export const getMovieTrailer = async (title, year) => {
     try {
@@ -57,7 +54,7 @@ export const getMovieTrailer = async (title, year) => {
             params: {
                 part: 'snippet',
                 q: query,
-                key: YOUTUBE_API_KEY,
+                key: import.meta.env.VITE_YOUTUBE_API_KEY,
                 type: 'video',
                 maxResults: 1,
             },

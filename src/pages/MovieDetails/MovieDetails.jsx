@@ -131,7 +131,7 @@ const MovieDetails = () => {
                 {/* Trailer Section */}
                 {trailerUrl ? (
                     <div className="trailer-section mb-5">
-                        <h2 className="mb-4">Trailer</h2>
+                        <h2 className="mb-4">Watch Trialer</h2>
                         <div className="ratio ratio-16x9">
                             <iframe
                                 src={trailerUrl}

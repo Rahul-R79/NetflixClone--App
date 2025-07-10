@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { Navigate, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { Spinner } from "react-bootstrap";
 
@@ -11,11 +11,9 @@ const ProtectedRoute = ({ children }) => {
     // Handle navigation based on authentication state
     useEffect(() => {
         if (!isLoading) {
-            // If authenticated and trying to access login/signup, redirect to home
             if (isAuthenticated && ['/login', '/signup'].includes(location.pathname)) {
                 navigate("/", { replace: true });
             }
-            // If not authenticated and trying to access a protected route, redirect to login
             else if (!isAuthenticated && !['/login', '/signup', '/'].includes(location.pathname)) {
                 navigate("/login", { replace: true, state: { from: location } });
             }
@@ -44,11 +42,6 @@ const ProtectedRoute = ({ children }) => {
                 <Spinner animation="border" />
             </div>
         );
-    }
-
-    // Prevent rendering for unauthorized access 
-    if (!isAuthenticated && !['/login', '/signup', '/'].includes(location.pathname)) {
-        return null;
     }
 
     return children || <Outlet />;
